@@ -2,7 +2,8 @@
 session_start();
 function connect(){
     try {
-        $db = new PDO('mysql:host=localhost;dbname=defi8', 'root', 'root');
+        $db = new PDO('mysql:host=localhost;port=3307;dbname=conciergerie', 'root', '');
+        echo 'ok';
         return $db;
         }
     catch (PDOException $e) {
@@ -10,7 +11,7 @@ function connect(){
         die();
     }
 }
-
+connect();
 
 function register(){
         $pass = password_hash($_POST['password'],  PASSWORD_DEFAULT);
