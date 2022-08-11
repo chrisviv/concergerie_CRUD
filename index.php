@@ -1,5 +1,5 @@
 <?php 
-session_start();
+include('connect.php');
 if(isset($_SESSION['nom_user'])){
 echo "Bienvenue ".$_SESSION['nom_user']." <a href='./logout.php'>Se déconnecter</a>";
 }
@@ -15,25 +15,26 @@ else{
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Concergerie d'un immeuble</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Conciergerie d'un immeuble</title>
 </head>
 <body>
 <main>
     <form action="connect.php" method="post">
-        <h1>Login</h1>
+        <h1>Conciergerie</h1>
         <div>
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username">
+            <label for="type_intervention">Type d'intervention</label>
+            <input type="text" name="type_intervention" id="type_inntervention">
         </div>
         <div>
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password">
+            <label for="date_intervention">Date d'intervention</label>
+            <input type="date_intervention" name="date_intervention" id="date_intervention">
         </div>
-        <section>
-            <button type="submit" name="action" value="login">Login</button>
-            <a href="register.php">Register</a>
-        </section>
+        <div>
+            <label for="etage_intervention">Etage d'intervention</label>
+            <input type="etage_intervention" name="etage_intervention" id="etage_intervention">
+        </div>
+        
     </form>
 </main>
 </body>

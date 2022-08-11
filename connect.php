@@ -14,11 +14,11 @@ function connect(){
 connect();
 
 function register(){
-        $pass = password_hash($_POST['password'],  PASSWORD_DEFAULT);
-        $login = $_POST['username'];
-        $name = $_POST['fullname'];
+        $pass = password_hash("menard",  PASSWORD_DEFAULT);
+        $login ="menard";
+        $name = "Menard";
 
-        $ajouter = connect()->prepare('INSERT INTO user (login_user, password_user, name_user ) VALUES (:login_user, :password_user, :name_user)');
+        $ajouter = connect()->prepare('INSERT INTO users (login_user, password_user, name_user ) VALUES (:login_user, :password_user, :name_user)');
         $ajouter->bindParam(':login_user', $login, 
         PDO::PARAM_STR);
         $ajouter->bindParam(':password_user', $pass,  
@@ -27,15 +27,15 @@ function register(){
         PDO::PARAM_STR);
         $estceok = $ajouter->execute();
         $ajouter->debugDumpParams();
-            if($estceok){
-                header('Location: ./index.php');   
-            } else {
-                echo 'Error during registration';
-            }
+        if($estceok){
+            header('Location: ./index.php');   
+        } else {
+            echo 'Error during registration';
         }
+}
 
 function login(){
-    $findUser = connect()->prepare('SELECT * FROM user WHERE login_user = :login_user');
+    $findUser = connect()->prepare('SELECT * FROM users WHERE login_user = :login_user');
     $findUser->bindParam(':login_user', $_POST['username'], PDO::PARAM_STR);
     $findUser->execute();
     $user = $findUser->fetch();
