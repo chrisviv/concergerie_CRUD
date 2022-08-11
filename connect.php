@@ -3,7 +3,7 @@ session_start();
 function connect(){
     try {
         $db = new PDO('mysql:host=localhost;port=3307;dbname=conciergerie', 'root', '');
-        echo 'ok';
+        // echo 'ok';
         return $db;
         }
     catch (PDOException $e) {
