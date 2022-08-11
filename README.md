@@ -15,3 +15,5 @@ Il est attendu un rendu en ligne et sur GitHub + la fourniture d'un MCD + MLD
 Ce travail se fera individuellement.
 
 Il est attendu un travail propre, fonctionnel et professionnel.
+
+A revoir
