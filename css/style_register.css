@@ -1,36 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-*{margin: 0;padding: 0;box-sizing: border-box;}
-
-body{
-    background: #67be4b;
-}
-#container{
-    width: 400px;
-    margin: 0 auto;
-    margin-top: 10%;
-}
+*{margin: 0;padding: 0;box-sizing: border-box;font-family: 'prompt', sans-serif;}
+body{background: #67be4b;}
+#containerReg{width: 400px;margin: 0 auto;margin-top: 10%;}
 /* bordered form */
 form{
-    width: 100%;
-    padding: 30PX;
-    border: 1px solid #f1f1f1;
+    padding: 30px;
     background: #fff;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-#container h1{
+    border-radius: 10px;}
+.boxRegister{
     width: 38%;
     margin: 0 auto;
     padding-bottom: 10px;
-}
+    font-size: 2rem;}
 /* full-with inpus */
-input[type=text], input[type=password]{
+input[type=text], input[type=text], input[type=password]{
     width:100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+    box-sizing: border-box;}
 /* set a style for all bottons */
 input[type=submit]{
     background-color: #53af57;
@@ -39,12 +29,10 @@ input[type=submit]{
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
-}
+    width: 100%;}
 input[type=submit]:hover{
     background-color: white;
     color: #53af57;
-    border: 1px solid #53af57;
-}
+    border: 1px solid #53af57;}
    
 

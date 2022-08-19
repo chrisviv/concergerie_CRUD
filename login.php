@@ -15,17 +15,15 @@
             <h1>Login</h1>
 
             <div>
-                <label for="username">Username:</label>
+                <label for="username">Nom d'utilisateur:</label>
                 <input type="text" name="username" id="username">
-            </div>
-            <div>
-                <label for="password">Password:</label>
+            
+                <label for="password">Mot de passe:</label>
                 <input type="password" name="password" id="password">
-            </div>
-            <section>
-                <button type="submit" name="action" value="login">Login</button>
+                   
+                <input type="submit" name="action" value="login" id="submit">
                 <a href="register.php">Register</a>
-            </section>
+            </div>
         </form>
     </div>
 </main>

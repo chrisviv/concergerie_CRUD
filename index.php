@@ -1,7 +1,7 @@
 <?php 
 include('connect.php');
 if(isset($_SESSION['nom_user'])){
-echo "<p>Bienvenue ".$_SESSION['nom_user']."</p> <a href='./logout.php'>Se déconnecter</a>";
+echo "<p>Bienvenue Mr". " ".$_SESSION['nom_user']."</p> <a class='boxLogout' href='./logout.php'>Se déconnecter</a>";
 }
 else{
     header('Location: ./login.php');     
@@ -44,7 +44,6 @@ if(isset($_POST['action'])){
         //on récupére l'id 
         // $id = $db->lastInsertId();
         // die("Ajout de l'intervention effectuée sous le numero $id");
-
     }
     elseif($_POST['action']=='addTypeInter'&& isset($_POST['type_intervention'])&& !empty($_POST['type_intervention'])){
         addingType();
@@ -55,36 +54,41 @@ if(isset($_POST['action'])){
 }
 ?>
 <main>
-    <form action="" method="post">
-        <h1>Conciergerie</h1>
-        <div id=boxIntervention>
-            <p>Ajouter les interventions </p>
-            
-            <div>
-                <label for="etage_intervention">Etage</label>
-                <input type="number" name="etage_intervention" id="etage_intervention">
-                <button class="etage" type="submit" name="action" value="addInter">Ajouter une</button>
+    <section>
+        <form action="" method="post">
+            <!-- zone de connextion -->
+            <h1 class="boxIndex">Conciergerie</h1>
+            <div id=boxIntervention>
+                <div class="boxEtage">
+                    <p class="ajoutInt">Ajouter les interventions </p>
+                    <label for="etage_intervention">Etage</label>
+                    <input type="number" name="etage_intervention" id="etage_intervention">
+                    <button class="etage" type="submit" name="action" value="addInter">Ajouter une</button>
+                </div>
+                <select name="addTache" id="addTache">
+                    <?php
+                        retrieveTache();
+                    ?>
+                </select>
+                <div class="dateInt">
+                    <label for="date_intervention">Date d'intervention</label>
+                    <input type="date" name="date_intervention" id="date_intervention">
+                </div>
             </div>
-            <select name="addTache" id="addTache">
-                <?php
-                    retrieveTache();
-                ?>
-            </select>
-            <div>
-                <label for="date_intervention">Date d'intervention</label>
-                <input type="date" name="date_intervention" id="date_intervention">
+        </form>
+    </section>
+    <section>
+        <form action="" method="post">
+                <!-- zone de connextion -->
+            <div id="boxTypeInt">
+                <div>
+                    <label for="type_intervention">Type d'intervention</label>
+                    <input type="text" name="type_intervention" id="type_inntervention">
+                    <button class="type" type="submit" name="action" value="addTypeInter">Ajouter le type d'intervention</button>
+                </div>
             </div>
-            </div>
-    </form>
-
-    <form action="" method="post">
-            <div>
-                <label for="type_intervention">Type d'intervention</label>
-                <input type="text" name="type_intervention" id="type_inntervention">
-                <button class="type" type="submit" name="action" value="addTypeInter">Ajouter le type d'intervention</button>
-            
-            </div>
-    </form>
-</main>
+        </form>
+    </section>
+    </main>
 </body>
 </html>
