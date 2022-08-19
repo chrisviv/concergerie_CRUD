@@ -1,24 +1,20 @@
 *{margin: 0;padding: 0;box-sizing: border-box;}
-body{
-    background: #67be4b;
-}
-#container{
-    width: 400px;
-    margin: 0 auto;
-    margin-top: 10%;
-}
+body{background: #67be4b;}
+#container{width: 400px;margin: 0 auto;margin-top: 10%;}
 /* bordered form */
 form{
     width: 100%;
-    padding: 30PX;
+    padding: 30px;
     border: 1px solid #f1f1f1;
     background: #fff;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
 }
 #container h1{
     width: 38%;
     margin: 0 auto;
     padding-bottom: 10px;
+    font-size: 2rem;
 }
 /* full-with inpus */
 input[type=text], input[type=password]{
@@ -28,6 +24,7 @@ input[type=text], input[type=password]{
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+ 
 }
 /* set a style for all bottons */
 input[type=submit]{
@@ -43,6 +40,7 @@ input[type=submit]:hover{
     background-color: white;
     color: #53af57;
     border: 1px solid #53af57;
+   
 }
    
 

@@ -13,7 +13,7 @@ else{
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_connect.css">
+    <link rel="stylesheet" href="./css/style_index.css">
     <title>Conciergerie d'un immeuble</title>
 </head>
 <body>
@@ -25,8 +25,7 @@ if(isset($_POST['action'])){
         //La saisie des interventions est complet
         // On récupére les données en les protégeant (failles XSS)
         //On peut les enregister 
-        //on se connecte à la base
-        //require_once "../../incluses/connect.php";
+        //on se connecte à la base  //require_once "../../incluses/connect.php";
         //on écrit la requête 
         $sql = "INSERT INTO `concierge`(`etage_intervention`, `date_intervention`,`id_user`,`ID_taches`) VALUES (:etage_intervention, :date_intervention, :id_user, :id_taches)";
         //on prépare la requête
