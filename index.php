@@ -62,10 +62,10 @@ if(isset($_POST['action'])){
                 <p class="ajoutInt">Ajouter les interventions </p>
                 <label for="etage_intervention">Etage</label>
                 <input type="number" name="etage_intervention" id="etage_intervention">
-                <button class="etage" type="submit" name="action" value="addInter">Ajouter une</button>
+                <button class="etage" type="submit" name="action" value="addInter">Ajouter ici</button>
             </div>
             <select name="addTache" id="addTache">
-                <?php
+               <?php
                     retrieveTache();
                 ?>
             </select>
@@ -85,6 +85,7 @@ if(isset($_POST['action'])){
             </div>
         </div>
     </form>
+    <a href="maintenance.php">Maintenance</a>
 </main>
 </body>
 </html>
