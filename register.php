@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style_register.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Register</title>
 </head>
-<body>
+<body id="register">
     <main>
     <div id="containerReg">
-        <form action="connect.php" method="post">
+        <form action="connect.php" method="post" class="form1">
            <!-- zone de connextion -->
 
             <h1 class="boxRegister">Register</h1>
@@ -24,7 +24,7 @@
                 <label for="password">Mot de passe:</label>
                 <input type="password" name="password" id="password">
                            
-                <input id='register' type="submit" name="action" value="register"></input>
+                <input id="inRegister" type="submit" name="action" value="register"></input>
                 <a href="index.php">Login</a>
             </div>
         </form>

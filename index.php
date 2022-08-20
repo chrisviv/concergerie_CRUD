@@ -13,10 +13,10 @@ else{
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style_index.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Conciergerie d'un immeuble</title>
 </head>
-<body>
+<body id="index">
     <?php
 //on traite l'ajout des interventions
 if(isset($_POST['action'])){
@@ -54,41 +54,37 @@ if(isset($_POST['action'])){
 }
 ?>
 <main>
-    <section>
-        <form action="" method="post">
-            <!-- zone de connextion -->
-            <h1 class="boxIndex">Conciergerie</h1>
-            <div id=boxIntervention>
-                <div class="boxEtage">
-                    <p class="ajoutInt">Ajouter les interventions </p>
-                    <label for="etage_intervention">Etage</label>
-                    <input type="number" name="etage_intervention" id="etage_intervention">
-                    <button class="etage" type="submit" name="action" value="addInter">Ajouter une</button>
-                </div>
-                <select name="addTache" id="addTache">
-                    <?php
-                        retrieveTache();
-                    ?>
-                </select>
-                <div class="dateInt">
-                    <label for="date_intervention">Date d'intervention</label>
-                    <input type="date" name="date_intervention" id="date_intervention">
-                </div>
+    <form action="" method="post" >
+        <!-- zone de connextion -->
+        <h1 class="boxIndexH1">Conciergerie</h1>
+        <div id=boxIntervention>
+            <div class="boxEtage">
+                <p class="ajoutInt">Ajouter les interventions </p>
+                <label for="etage_intervention">Etage</label>
+                <input type="number" name="etage_intervention" id="etage_intervention">
+                <button class="etage" type="submit" name="action" value="addInter">Ajouter une</button>
             </div>
-        </form>
-    </section>
-    <section>
-        <form action="" method="post">
-                <!-- zone de connextion -->
-            <div id="boxTypeInt">
-                <div>
-                    <label for="type_intervention">Type d'intervention</label>
-                    <input type="text" name="type_intervention" id="type_inntervention">
-                    <button class="type" type="submit" name="action" value="addTypeInter">Ajouter le type d'intervention</button>
-                </div>
+            <select name="addTache" id="addTache">
+                <?php
+                    retrieveTache();
+                ?>
+            </select>
+            <div class="dateInt">
+                <label for="date_intervention">Date d'intervention</label>
+                <input type="date" name="date_intervention" id="date_intervention">
             </div>
-        </form>
-    </section>
-    </main>
+        </div>
+    </form>
+    <form action="" method="post">
+        <!-- zone de connextion -->
+        <div id="boxTypeInt">
+            <div>
+                <label for="type_intervention">Type d'intervention</label>
+                <input type="text" name="type_intervention" id="type_inntervention">
+                <button class="type" type="submit" name="action" value="addTypeInter">Ajouter le type d'intervention</button>
+            </div>
+        </div>
+    </form>
+</main>
 </body>
 </html>
