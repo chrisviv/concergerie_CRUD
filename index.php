@@ -17,34 +17,21 @@ else{
     <title>Conciergerie d'un immeuble</title>
 </head>
 <body id="index">
-    <?php
+<?php
 //on traite l'ajout des interventions
-if(isset($_POST['action'])){
-    //POST n'est pas vide, on vérfie que les données sont présentes
+if(isset($_POST['action'])){//POST n'est pas vide, on vérfie que les données sont présentes
     if($_POST['action']=='addInter'&&isset($_POST['etage_intervention'], $_POST['date_intervention'], $_POST['addTache'])&& !empty($_POST['etage_intervention']) && !empty($_POST['date_intervention'])&& !empty( $_POST['addTache'])){
-        //La saisie des interventions est complet
-        // On récupére les données en les protégeant (failles XSS)
-        //On peut les enregister 
-        //on se connecte à la base  //require_once "../../incluses/connect.php";
-        //on écrit la requête 
+        //La saisie des interventions est complet // On récupére les données en les protégeant (failles XSS)//On peut les enregister //on se connecte à la base  //require_once "../../incluses/connect.php"; //on écrit la requête 
         $sql = "INSERT INTO `concierge`(`etage_intervention`, `date_intervention`,`id_user`,`ID_taches`) VALUES (:etage_intervention, :date_intervention, :id_user, :id_taches)";
-        //on prépare la requête
-        $query = connect()->prepare($sql);
-        //on injecte les valeurs
-        $query->bindParam(":etage_intervention", $_POST['etage_intervention']);
-        // $query->bindParam(":type_intervention", $_POST['type_intervention']);
+        $query = connect()->prepare($sql); //on prépare la requête
+        $query->bindParam(":etage_intervention", $_POST['etage_intervention']);//on injecte les valeurs
         $query->bindParam(":date_intervention", $_POST['date_intervention']);
         $query->bindParam(":id_user", $_SESSION['id_user']);
         $query->bindParam(":id_taches", $_POST['addTache']);
-
-        //on exécute la requete
-        if(!$query->execute()){
-            die("Une erreur est survenue");
+        if(!$query->execute()){//on exécute la requete
+            die("Une erreur est survenue");//on récupére l'id // $id = $db->lastInsertId(); // die("Ajout de l'intervention effectuée sous le numero $id");
+            }
         }
-        //on récupére l'id 
-        // $id = $db->lastInsertId();
-        // die("Ajout de l'intervention effectuée sous le numero $id");
-    }
     elseif($_POST['action']=='addTypeInter'&& isset($_POST['type_intervention'])&& !empty($_POST['type_intervention'])){
         addingType();
     }
@@ -54,7 +41,7 @@ if(isset($_POST['action'])){
 }
 ?>
 <main>
-    <form action="" method="post" >
+    <form action="index.php" method="post" >
         <!-- zone de connextion -->
         <h1 class="boxIndexH1">Conciergerie</h1>
         <div id=boxIntervention>
@@ -75,7 +62,7 @@ if(isset($_POST['action'])){
             </div>
         </div>
     </form>
-    <form action="" method="post">
+    <form action="index.php" method="post">
         <!-- zone de connextion -->
         <div id="boxTypeInt">
             <div>

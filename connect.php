@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 function connect(){
     try {
         $db = new PDO('mysql:host=localhost;port=3307;dbname=conciergerie', 'root', '');
@@ -12,7 +13,7 @@ function connect(){
     }
 }
 function register(){
-        $pass = password_hash("menard",  PASSWORD_DEFAULT);
+        $pass = password_hash("menard",  PASSWORD_ARGON2I);
         $login ="menard";
         $name = "Menard";
 
@@ -37,9 +38,6 @@ function login(){
     $findUser->execute();
     $user = $findUser->fetch();
  
-    //$user && password_verify($_POST['password'], $user['password_user'])
-    //le mot de passe est alex
-    //$user && password_verify(alex, $2y$10$6BcBM4oinhbyHIL09w.j/eIFwYkCc499VDIZIy7LJ1PRU4GO2ynQS])
     if ($user && password_verify($_POST['password'], $user['password_user'])) {
         $_SESSION['nom_user'] = $user['name_user'];
         $_SESSION['id_user'] = $user['id_user'];
@@ -71,11 +69,39 @@ function addingType(){
         echo $th;
     }
 }
-if(isset($_POST['action']) && !empty($_POST['username'])  && !empty($_POST['password'])  && $_POST['action']=="register"){
+function addingMaintenance(){
+    try {
+        $str = connect()->prepare("INSERT INTO concierge (date_intervention) VALUE(?)");
+        $str->execute();
+        $str->execute(array(
+            $_POST['date_intervention']));
+    } catch (PDOException $th) {
+        echo $th;
+    }
+}
+// function deleteMaintien(){
+//     $query= connect()->prepare("DELETE FROM taches WHERE id_taches=:id_taches");
+//     $query->bindParam(':idToDelete', $_POST['IDToSendForDelete']);
+//     $query->execute();
+//     header('Location: index.php');
+// }
+
+
+
+
+
+
+if(isset($_POST['action']) && !empty($_POST['username'])  && !empty($_POST['name'])  && !empty($_POST['password'])  && $_POST['action']=="register"){
     register();
 }
 if(isset($_POST['action']) && !empty($_POST['username'])  && !empty($_POST['password'])  && $_POST['action']=="login"){
     login();
+}
+if(isset($_POST['action']) && $_POST['action']=="Modifier"){
+    updateMaintien();
+}
+if(isset($_POST['action']) && $_POST['action']=="Supprimer"){
+    deleteMaintien();
 }
 ?>
 
