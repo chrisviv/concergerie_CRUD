@@ -1,3 +1,6 @@
+<?php
+include('connect.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,6 +17,7 @@
             <h1>Maintenance</h1>
             <table id="customers">
                 <thead>
+                   
                     <tr>
                         <th>Date d'intervention</th>
                         <th>Type d'interventon</th>
@@ -22,35 +26,7 @@
                         <th>Supprimer</th>
                     </tr>
                 </thead>
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td><button class="bouton modif">Modification</button></td>
-                        <td><button class="bouton sup">Supprimer</button></td>
-                    </tr>
-                   
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td><button class="bouton modif">Modification</button></td>
-                        <td><button class="bouton sup">Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td><button class="bouton modif">Modification</button></td>
-                        <td><button class="bouton sup">Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td><button class="bouton modif">Modification</button></td>
-                        <td><button class="bouton sup">Supprimer</button></td>
-                    </tr>
+                <?php retrieve(); ?>   
            </table>
             <a href="index.php">Index</a>
             </div>

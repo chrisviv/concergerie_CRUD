@@ -44,7 +44,7 @@ function login(){
         header('Location: ./index.php');  
         
     } else {
-        echo 'Invalid username or password';
+        echo 'Votre email ou votre mot de passe est incorrect !';
     }
 }
 function retrieveTache(){
@@ -69,7 +69,7 @@ function addingType(){
         echo $th;
     }
 }
-function addingMaintenance(){
+function modify(){
     try {
         $str = connect()->prepare("INSERT INTO concierge (date_intervention) VALUE(?)");
         $str->execute();
@@ -79,17 +79,25 @@ function addingMaintenance(){
         echo $th;
     }
 }
-// function deleteMaintien(){
-//     $query= connect()->prepare("DELETE FROM taches WHERE id_taches=:id_taches");
-//     $query->bindParam(':idToDelete', $_POST['IDToSendForDelete']);
-//     $query->execute();
-//     header('Location: index.php');
-// }
-
-
-
-
-
+function delete(){
+    $query= connect()->prepare("DELETE FROM taches WHERE id_taches=:id_taches");
+    $query->bindParam(':idToDelete', $_POST['IDToSendForDelete']);
+    $query->execute();
+    header('Location: index.php');
+}
+function retrieve(){
+    try {
+        $str = connect()->prepare("SELECT concierge.ID_intervention,concierge.date_intervention,taches.Nom_taches,concierge.etage_intervention FROM concierge INNER JOIN taches ON concierge.ID_taches = taches.ID_taches ;");
+        $str->execute();
+        $return = $str->fetchAll();
+        for ($i=0; $i < count($return); $i++) {
+            $index = strval($i);
+            echo '<tr><td>'.$return[$index]['date_intervention'].'</td><td>'.$return[$index]['Nom_taches'].'</td><td>'.$return[$index]['etage_intervention'].'</td><td><form action="modify.php" method="post"><input type="hidden" name="IDToSendForReplace" value="'.$return[$index]['ID_intervention'].'"><input type="submit" name="action" value="Modifier" class="bouton modif"></form></td><td><form action="" method="post"><input type="hidden" name="IDToSendForDelete" value="'.$return[$index]['ID_intervention'].'"><input type="submit" name="action" value="Supprimer" class="bouton sup"></form></td></tr>';
+        }
+    } catch (PDOException $th) {
+        echo $th;
+    }
+}
 
 if(isset($_POST['action']) && !empty($_POST['username'])  && !empty($_POST['name'])  && !empty($_POST['password'])  && $_POST['action']=="register"){
     register();
@@ -97,11 +105,11 @@ if(isset($_POST['action']) && !empty($_POST['username'])  && !empty($_POST['name
 if(isset($_POST['action']) && !empty($_POST['username'])  && !empty($_POST['password'])  && $_POST['action']=="login"){
     login();
 }
-if(isset($_POST['action']) && $_POST['action']=="Modifier"){
-    updateMaintien();
+if(isset($_POST['action']) && $_POST['action']=="modify_int"){
+    modify();
 }
-if(isset($_POST['action']) && $_POST['action']=="Supprimer"){
-    deleteMaintien();
+if(isset($_POST['action']) && $_POST['action']=="delete_int"){
+    delete();
 }
 ?>
 

@@ -21,16 +21,17 @@ p{font-size: 2.5rem;text-align: center;font-weight: 300;color: white;}
 /* h1: Conciergerie */
 .boxIndexH1{width: 100%;font-size: 4rem;margin:120px 40px 0 0;color: white;font-weight: 200;}
 /* partie Index.php//2form */
-#boxIntervention, #boxTypeInt{width: 100%;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 50px;}
+#boxIntervention, #boxTypeInt{width: 100%;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 30px;}
 /* partie index enregistrement etage */
 .boxEtage{margin: 10px;padding: 5px;}
 /* partie index ajout intervention*/
 .ajoutInt{font-size: 1.5rem;text-align: center;font-weight: 500; color:black;margin: -30px 0 25px 0;}
 #etage_intervention{width: 50%;}
-.etage{}
+.etage, .type{width: 100%;background-color: #ffca3a; border: none;color: white;margin-top: 20px;height: 35px;}
+.etage:hover, .type:hover{background-color: white;color: #ffca3a;border: 1px solid #ffca3a;border-radius: 50px;}
 /* partie select ajout tache: Index*/
 #addTache{margin: 20px 0px;}
-/* date intervantion index */
+/* date intervention index */
 #date_intervention{
     width: 50%;margin-top: 10px}
 /* partie a  */
