@@ -12,12 +12,12 @@
 </head>
 <body>
     <form action="connect.php" method="POST">
-        <select name="tacheToReplace" id="tacheToReplace">
+        <select name="tacheToReplace" id="tacheToReplace" required>
             <option value=""></option>
             <?php retrieveTache();?>
         </select>
-        <input type="date" name="dateToReplace" id="dateToReplace">
-        <input type="number" name="floorToReplace" id="floorToReplace">
+        <input type="date" name="dateToReplace" id="dateToReplace" required>
+        <input type="number" name="floorToReplace" id="floorToReplace" required>
         <input type="hidden" name="idHiddenToReplace" value="<?php echo $_POST['IDToSendForReplace']?>">
         <input type="submit" name="action" value="Modifier">
     </form>

@@ -69,12 +69,28 @@ function addingType(){
         echo $th;
     }
 }
+// function modifyMaintien(){
+//     try {
+//         $str = connect()->prepare("UPDATE concierge SET date_intervention= ? ,etage_intervention= ? ,ID_taches= ? WHERE= id_intervention= ?;");
+//         $str->execute(array(
+//             $_POST['dateToReplace'],
+//             $_POST['floorToReplace'],
+//             $_POST['tacheToReplace'],
+//             $_POST['idHiddenToReplace']));
+//         header('Location: maintenance.php');
+//     } catch (PDOException $th) {
+//         echo $th;
+//     }
+// }
 function modifyMaintien(){
     try {
-        $str = connect()->prepare("INSERT INTO concierge (date_intervention) VALUE(?)");
+        $str = connect()->prepare("UPDATE concierge SET date_intervention= :date ,etage_intervention= :etage ,ID_taches= :idTache WHERE id_intervention= :idInter");
+        $str->bindParam(':date', $_POST['dateToReplace']);
+        $str->bindParam(':etage', $_POST['floorToReplace']);
+        $str->bindParam(':idTache', $_POST['tacheToReplace']);
+        $str->bindParam('idInter',$_POST['idHiddenToReplace'] );
         $str->execute();
-        $str->execute(array(
-            $_POST['date_intervention']));
+        header('Location: maintenance.php');
     } catch (PDOException $th) {
         echo $th;
     }
@@ -92,7 +108,7 @@ function retrieve(){
         $return = $str->fetchAll();
         for ($i=0; $i < count($return); $i++) {
             $index = strval($i);
-            echo '<tr><td>'.$return[$index]['date_intervention'].'</td><td>'.$return[$index]['Nom_taches'].'</td><td>'.$return[$index]['etage_intervention'].'</td><td><form action="modify.php" method="post"><input type="hidden" name="IDToSendForReplace" value="'.$return[$index]['ID_intervention'].'"><input type="submit" name="action" value="Modifier" class="bouton modif"></form></td><td><form action="" method="post"><input type="hidden" name="IDToSendForDelete" value="'.$return[$index]['ID_intervention'].'"><input type="submit" name="action" value="Supprimer" class="bouton sup"></form></td></tr>';
+            echo '<tr><td>'.$return[$index]['date_intervention'].'</td><td>'.$return[$index]['Nom_taches'].'</td><td>'.$return[$index]['etage_intervention'].'</td><td><form action="modify.php" method="post"><input type="hidden" name="IDToSendForReplace" value="'.$return[$index]['ID_intervention'].'"><input type="submit" value="Modifier" class="bouton modif"></form></td><td><form action="" method="post"><input type="hidden" name="IDToSendForDelete" value="'.$return[$index]['ID_intervention'].'"><input type="submit" name="action" value="Supprimer" class="bouton sup"></form></td></tr>';
         }
     } catch (PDOException $th) {
         echo $th;
@@ -104,9 +120,9 @@ if(isset($_POST['action']) && !empty($_POST['username'])  && !empty($_POST['name
 if(isset($_POST['action']) && !empty($_POST['username'])  && !empty($_POST['password'])  && $_POST['action']=="login"){
     login();
 }
-// if(isset($_POST['action']) && $_POST['action']=="Modifier"){
-//     modifyMaintien();
-// }
+if(isset($_POST['action']) && $_POST['action']=="Modifier"){
+    modifyMaintien();
+}
 if(isset($_POST['action']) && $_POST['action']=="Supprimer"){
     deleteMaintien();
 }

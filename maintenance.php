@@ -13,11 +13,9 @@ include('connect.php');
 <main>
     <div id="boxContainer">
         <!-- zone de connextion -->
-        <form action="connect.php" method="POST" class="form2">
             <h1>Maintenance</h1>
             <table id="customers">
                 <thead>
-                   
                     <tr>
                         <th>Date d'intervention</th>
                         <th>Type d'interventon</th>
@@ -26,12 +24,11 @@ include('connect.php');
                         <th>Supprimer</th>
                     </tr>
                 </thead>
-                <?php retrieve(); ?>   
+                <?php retrieve(); ?>
            </table>
             <a href="index.php">Index</a>
-            </div>
-        </form>
+        </div>
     </div>
-</main>
+</main> 
 </body>
 </html>
