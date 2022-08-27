@@ -69,7 +69,7 @@ function addingType(){
         echo $th;
     }
 }
-function modify(){
+function modifyMaintien(){
     try {
         $str = connect()->prepare("INSERT INTO concierge (date_intervention) VALUE(?)");
         $str->execute();
@@ -79,11 +79,11 @@ function modify(){
         echo $th;
     }
 }
-function delete(){
-    $query= connect()->prepare("DELETE FROM taches WHERE id_taches=:id_taches");
+function deleteMaintien(){
+    $query= connect()->prepare("DELETE FROM concierge WHERE id_intervention=:idToDelete;");
     $query->bindParam(':idToDelete', $_POST['IDToSendForDelete']);
     $query->execute();
-    header('Location: index.php');
+    header('Location: maintenance.php');
 }
 function retrieve(){
     try {
@@ -98,18 +98,17 @@ function retrieve(){
         echo $th;
     }
 }
-
 if(isset($_POST['action']) && !empty($_POST['username'])  && !empty($_POST['name'])  && !empty($_POST['password'])  && $_POST['action']=="register"){
     register();
 }
 if(isset($_POST['action']) && !empty($_POST['username'])  && !empty($_POST['password'])  && $_POST['action']=="login"){
     login();
 }
-if(isset($_POST['action']) && $_POST['action']=="modify_int"){
-    modify();
-}
-if(isset($_POST['action']) && $_POST['action']=="delete_int"){
-    delete();
+// if(isset($_POST['action']) && $_POST['action']=="Modifier"){
+//     modifyMaintien();
+// }
+if(isset($_POST['action']) && $_POST['action']=="Supprimer"){
+    deleteMaintien();
 }
 ?>
 

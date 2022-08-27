@@ -43,7 +43,7 @@ a{font-size: 1rem;text-decoration: none;margin-top: 20px;}
 /* full-with input//login*/
 input[type=text], input[type=password]{width:100%;padding: 12px 20px;margin: 20px 0;display: inline-block;border: 1px solid #ccc;}
 /* set a style for all bottons */
-input[type=submit]{background-color: #8ac926;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
+input[type=submit]{background-color: #8ac926;color: white;padding: 5px 20px; margin: 10px 0;border: none;cursor: pointer;width: 100%;}
 /* partie input Login */
 input[type=submit]:hover{background-color: white;color: #8ac926;border: 1px solid #8ac926;border-radius: 50px;}
 /*//////////////////////////// partie register.php //////////////////////////////*/

@@ -1,4 +1,5 @@
-<?php include('index.php');?>
+<?php include('connect.php');?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
