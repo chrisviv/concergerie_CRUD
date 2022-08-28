@@ -52,7 +52,7 @@ if(isset($_POST['action'])){//POST n'est pas vide, on vérfie que les données s
             </div>
             <select name="addTache" id="addTache">
             <option value=""></option>
-               <?php retrieveTache();?>
+               <?php recupTache();?>
             </select>
             <div class="dateInt">
                 <label for="date_intervention">Date d'intervention</label>
@@ -72,6 +72,8 @@ if(isset($_POST['action'])){//POST n'est pas vide, on vérfie que les données s
         </div>
     </form>
     <a href="maintenance.php">Maintenance</a>
+    <a href="modify.php">Modifier</a>
+    <a href="search.php">Rechercher</a>
 </main>
 </body>
 </html>

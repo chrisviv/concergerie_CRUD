@@ -7,19 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Modifier une entrée</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Modifier une intervention</title>
 </head>
-<body>
+<body id="modifierInt">
     <form action="connect.php" method="POST">
-        <select name="tacheToReplace" id="tacheToReplace" required>
-            <option value=""></option>
-            <?php retrieveTache();?>
-        </select>
-        <input type="date" name="dateToReplace" id="dateToReplace" required>
-        <input type="number" name="floorToReplace" id="floorToReplace" required>
-        <input type="hidden" name="idHiddenToReplace" value="<?php echo $_POST['IDToSendForReplace']?>">
-        <input type="submit" name="action" value="Modifier">
+        <div id="boxModifyInt">
+            <h1>Modifier une internvation</h1>
+            <select name="tacheToReplace" id="tacheToReplace" required>
+                <option value=""></option>
+                <?php recupTache();?>
+            </select>
+            <input type="date" name="dateToReplace" id="dateToReplace" required>
+            <input type="number" name="floorToReplace" id="floorToReplace" required>
+            <!-- <input type="hidden" name="idHiddenToReplace" value="<?php echo $_POST['IDToSendForReplace']?>"> -->
+            <input id="inModify" type="submit" name="action" value="Modifier">
+        </div>
     </form>
+    <div class="linkInt">
+        <a href="index.php">Accueil</a>
+        <a href="search.php">Rechercher</a>
+    </div>
 </body>
 </html>

@@ -1,6 +1,5 @@
-<?php
-include('connect.php');
-?>
+<?php include('connect.php');?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,10 +23,12 @@ include('connect.php');
                         <th>Supprimer</th>
                     </tr>
                 </thead>
-                <?php retrieve(); ?>
+                <?php recup(); ?>
            </table>
-            <a href="index.php">Index</a>
-        </div>
+           <div class="linkInt">
+                <a href="index.php">Accueil</a>
+                <a href="search.php">Rechercher</a>
+           </div>
     </div>
 </main> 
 </body>
