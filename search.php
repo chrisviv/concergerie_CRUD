@@ -11,22 +11,24 @@
     <title>Chercher une intervention</title>
 </head>
 <body id="chercherInt">
-    <form action="connect.php" method="POST">
-        <div id="boxSearchInt">
-            <h1>Chercher une intervention</h1>
-            <select name="tacheToSearch" id="tacheToSearch" required>
-                <option value=""></option>
-                <?php  searchInt();?>
-            </select>
-            <input type="date" name="dateToSearch" id="dateToSearch" required>
-            <input type="number" name="floorToSearch" id="floorToSearch" required>
-            <!-- <input type="hidden" name="idHiddenToSearch" value="<?php echo $_POST['IDToSendForSearch']?>"> -->
-            <input id="inSearch" type="submit" name="action" value="Rechercher">
+    <main >
+        <form action="connect.php" method="POST">
+            <div id="boxSearchInt">
+                <h1>Chercher une intervention</h1>
+                <select name="tacheToSearch" id="tacheToSearch" >
+                    <option value=""></option>
+                    <?php  recupTache();?>
+                </select>
+                <input type="date" name="dateToSearch" id="dateToSearch" >
+                <input type="number" name="floorToSearch" id="floorToSearch" >
+           
+                <input id="inSearch" type="submit" name="action" value="Chercher">
+            </div>
+        </form>
+        <div class="linkInt">
+            <a href="index.php">Accueil</a>
+            <a href="modify.php">Modifier</a>
         </div>
-    </form>
-    <div class="linkInt">
-        <a href="index.php">Accueil</a>
-        <a href="modify.php">Modifier</a>
-    </div>
+    </main>
 </body>
 </html>

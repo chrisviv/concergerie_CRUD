@@ -2,29 +2,20 @@
 /* général */
 *{ margin: 0;padding: 0;box-sizing: border-box;font-family: 'prompt',sans-serif;}
 body{width: 100vw;height: 100vh;display: flex; flex-direction: column;justify-content: center;align-items: center;}
-/* parite body def color */
-#index{background:#ffca3a;width: 100%; height: 100%;display: flex; flex-direction: column;justify-content: start;align-items: center;}
-/* partie login.php */
-#login{background: #8ac926;}
-/* partie register */
-#register{background: #6a4c93;}
-/* partie maintenace */
-#maintenance{background: #1982C4;}
-/* partie Modifier */
-#modifierInt{ background:#FF595E;}
-/* partie Chercher */
-#chercherInt{background: #FF924C;}
+#index{background:#ffca3a;width: 100%; height: 100%;display: flex; flex-direction: column;justify-content: start;align-items: center;}/* parite body def color */
+#login{background: #8ac926;}/* partie login*/
+#register{background: #6a4c93;}/* partie register */
+#maintenance{background: #1982C4;}/* partie maintenance */
+#modifierInt{ background:#FF595E;}/* partie Modifier */
+#chercherInt{background: #FF924C;}/* partie Chercher */
 /* partie form login-register *//* bordered form */
 .form1{width: 100%;display: flex;justify-content: center;flex-direction: column;padding: 30px;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;}
-/* from juste pour index */
-form{width: 100%;display: flex;justify-content: center;}
-/* html BonjoUR Mr */
-p{font-size: 2.5rem;text-align: center;font-weight: 300;color: white;}
-/* partie déconnection */
+form{width: 100%;display: flex;justify-content: center;}/* from juste pour index */
+p{font-size: 2.5rem;text-align: center;font-weight: 300;color: white;}/* html BonjoUR Mr */
+/* partie déconnection *************************************************/
 .boxLogout{width: 100%;display: flex;justify-content: center;font-size: 1.1rem;text-decoration: none;}
-/* h1: Conciergerie */
-.boxIndexH1{width: 100%;font-size: 4rem;margin:120px 40px 0 0;color: white;font-weight: 200;}
-/* partie Index.php//2form */
+.boxIndexH1{width: 100%;font-size: 4rem;margin:120px 40px 0 0;color: white;font-weight: 200;}/* h1: Conciergerie */
+/* partie Index.php//form *********************************************/
 #boxIntervention, #boxTypeInt{width: 100%;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 30px;}
 /* partie index enregistrement etage */
 .boxEtage{margin: 10px;padding: 5px;}
@@ -35,15 +26,12 @@ p{font-size: 2.5rem;text-align: center;font-weight: 300;color: white;}
 .etage:hover, .type:hover{background-color: white;color: #ffca3a;border: 1px solid #ffca3a;border-radius: 50px;}
 /* partie select ajout tache: Index*/
 #addTache{margin: 20px 0px;}
-/* date intervention index */
-#date_intervention{
-    width: 50%;margin-top: 10px}
-/* partie HTML:a  */
+#date_intervention{width: 50%;margin-top: 10px}/* date intervention index */
+/* partie HTML:a  ///////////////////////////////////////*/
 a{font-size: 1rem;text-decoration: none;margin-top: 20px;}
 /*///////////////// partie login.php //////////////////*/
 #container{width: 400px;margin: 0 auto;margin-top: 10%;}
-/* partie h1:Login */
-#container h1{width: 100%;font-size: 4rem;margin: 10px;padding: 5px;}
+#container h1{width: 100%;font-size: 4rem;margin: 10px;padding: 5px;}/* partie h1:Login */
 /* full-with input//login*/
 input[type=text], input[type=password]{width:100%;padding: 12px 20px;margin: 20px 0;display: inline-block;border: 1px solid #ccc;}
 /* set a style for all bottons */
@@ -52,7 +40,7 @@ input[type=submit]{background-color: #8ac926;color: white;padding: 5px 20px; mar
 input[type=submit]:hover{background-color: white;color: #8ac926;border: 1px solid #8ac926;border-radius: 50px;}
 /*//////////////////////////// partie register.php //////////////////////////////*/
 #containerReg{width: 400px;margin: 0 auto;margin-top: 10%;}
-/* partie register*/
+/* partie register*********************************************/
 .boxRegister{width: 100%;margin: 0 auto;padding-bottom: 10px;font-size: 4rem;}
 /* partir input register *//* set a style for all bottons */
 #inRegister[type=submit]{background-color:#6a4c93;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
@@ -71,15 +59,15 @@ input[type=submit]:hover{background-color: white;color: #8ac926;border: 1px soli
 #bouton{width: 100%;background-color: #1982C4;border:none;border-radius: 50px;color: white;}
 #bouton:hover{background-color: white; color:#1982C4;border-radius: 50px;}
 /* partie Modifier*********************************************/
-#boxModifyInt{width: 30%;height: 50vh;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 30px;display: flex;flex-direction: column;justify-content: center;}
-#boxModifyInt > h1{font-size: 1.5rem; display: flex;justify-content: center;}
+#boxModifyInt{width:100%;height: 50vh;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 30px;display: flex;flex-direction: column;justify-content: center;}
+#boxModifyInt > h1{font-size: 2rem; display: flex;justify-content: center;padding: 10px;}
 #tacheToReplace{margin: 20px; width: 100%;}
 #dateToReplace, #floorToReplace{margin-bottom:  10px;width: 50%;}
 #inModify[type=submit]{background-color:#FF595E;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
 #inModify[type=submit]:hover{background-color: white; color: #FF595E;border: 1px solid #FF595E;border-radius: 50px;}
 /* partie chercher ******************************************/
-#boxSearchInt{width: 30%;height: 50vh;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 30px;display: flex;flex-direction: column;justify-content: center;}
-#boxSearchInt > h1{font-size: 2rem; display: flex;justify-content: center;}
+#boxSearchInt{width: 100%;height: 50vh;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 30px;display: flex;flex-direction: column;justify-content: center;}
+#boxSearchInt > h1{font-size: 2rem; display: flex;justify-content: center;padding: 10px;}
 #dateToSearch{margin: 20px; width: 100%;}
 #dateToSearch, #floorToSearch{margin-bottom:  10px;width: 50%;}
 #inSearch[type=submit]{background-color:#FF924C;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}

@@ -73,7 +73,7 @@ if(isset($_POST['action'])){//POST n'est pas vide, on vérfie que les données s
     </form>
     <a href="maintenance.php">Maintenance</a>
     <a href="modify.php">Modifier</a>
-    <a href="search.php">Rechercher</a>
+    <a href="search.php">Chercher</a>
 </main>
 </body>
 </html>

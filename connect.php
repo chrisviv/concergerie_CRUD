@@ -1,5 +1,6 @@
+<?php session_start();?>
+
 <?php
-session_start();
 
 function connect(){
     try {
@@ -104,8 +105,8 @@ function recup(){
 function searchInt(){
     try {
         $_SESSION['controleMulti'] = 0;
-        $query = "SELECT concierge.ID_intervention,concierge.date_intervention,taches.Nom_taches,concierge.etage_intervention FROM concierge INNER JOIN taches ON concierge.ID_taches = taches.ID_taches WHERE ";
-        if(($_POST['tacheToSearch']!=""&&$_POST['dateToSearch']!="")||($_POST['tacheToSearch']!=""&&$_POST['floorToSearch'])||($_POST['floorToSearch']!=""&&$_POST['dateToSearch'])){
+        $query = "SELECT concierge.ID_intervention,concierge.date_intervention,taches.Nom_taches,concierge.etage_intervention,users.name_user FROM concierge INNER JOIN taches ON concierge.ID_taches = taches.ID_taches INNER JOIN users ON concierge.id_user = users.id_user  WHERE ";
+        if(($_POST['tacheToSearch']!=""&& $_POST['dateToSearch']!="")||($_POST['tacheToSearch']!=""&& $_POST['floorToSearch'])||($_POST['floorToSearch']!=""&& $_POST['dateToSearch'])){
             $_SESSION['controleMulti'] = 1;
         }
         if ($_POST['tacheToSearch']!="") {
@@ -116,7 +117,7 @@ function searchInt(){
             if ($_SESSION['controleMulti'] = 1 && $_POST['tacheToSearch'] !="") {
                 $query .= " AND ";
             }
-            $query .= "concierge.date_intervention = :test";
+            $query .= "concierge.date_intervention = $retourForPrep";
         }
         if ($_POST['floorToSearch']!="") {
             $retourForPrep = $_POST['floorToSearch'];
@@ -132,10 +133,9 @@ function searchInt(){
         $str->execute();
         $return = $str->fetchAll();
         for ($i=0; $i < count($return); $i++) {
-            $index = strval($i);
-            echo '<option value="'.$return[$index]['ID_taches'].'">'.$return[$index]['Nom_taches'].'</option>';
-            // echo '<p>'.$return[$index]['Nom_taches'].', réalisé le '.$return[$index]['date_intervention']." à l'étage ".$return[$index]['etage_intervention']." par Mr ".$return[$index]['login_user'].'</p>';
-            echo '<form action="search.php"><input type="hidden" name="IDToSendForSearch" value="'.$return[$index]['ID_intervention'].'"><input type="submit" value="Rechercher"></form>';
+             $index = strval($i);
+            echo '<p> L\'intervention de '.$return[$index]['Nom_taches'].' a été réalisé le '.$return[$index]['date_intervention']." à l'étage ".$return[$index]['etage_intervention']." par Mr ".$return[$index]['name_user'].'</p>';
+            echo '<form action="search.php"><input type="hidden" name="IDToSendForSearch" value="'.$return[$index]['ID_intervention'].'"><input type="submit" value=" Chercher"></form>';
         }
     } catch (PDOException $th) {
         echo $th;
@@ -153,9 +153,7 @@ if(isset($_POST['action']) && $_POST['action']=="Modifier"){
 if(isset($_POST['action']) && $_POST['action']=="Supprimer"){
     deleteMaintien();
 }
-if(isset($_POST['action']) && $_POST['action']=="Rechercher"){
+ if(isset($_POST['action']) && $_POST['action']=="Chercher" && (!empty($_POST['tacheToSearch'])||!empty($_POST['dateToSearch'])||!empty($_POST['floorToSearch']))){  
     searchInt();
 }
 ?>
-
-

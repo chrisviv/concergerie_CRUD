@@ -9,27 +9,27 @@
     <title>Maintenance</title>
 </head>
 <body id="maintenance">
-<main>
-    <div id="boxContainer">
-        <!-- zone de connextion -->
-            <h1>Maintenance</h1>
-            <table id="customers">
-                <thead>
-                    <tr>
-                        <th>Date d'intervention</th>
-                        <th>Type d'interventon</th>
-                        <th>Etage concerné</th>
-                        <th>Modification</th>
-                        <th>Supprimer</th>
-                    </tr>
-                </thead>
-                <?php recup(); ?>
-           </table>
-           <div class="linkInt">
-                <a href="index.php">Accueil</a>
-                <a href="search.php">Rechercher</a>
-           </div>
-    </div>
-</main> 
+    <main>
+        <div id="boxContainer">
+            <!-- zone de connextion -->
+                <h1>Maintenance</h1>
+                <table id="customers">
+                    <thead>
+                        <tr>
+                            <th>Date d'intervention</th>
+                            <th>Type d'interventon</th>
+                            <th>Etage concerné</th>
+                            <th>Modification</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <?php recup(); ?>
+            </table>
+            <div class="linkInt">
+                    <a href="index.php">Accueil</a>
+                    <a href="search.php">Chercher</a>
+            </div>
+        </div>
+    </main> 
 </body>
 </html>
