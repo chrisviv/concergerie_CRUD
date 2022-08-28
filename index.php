@@ -1,7 +1,7 @@
 <?php 
 include('connect.php');
 if(isset($_SESSION['nom_user'])){
-echo "<p>Bienvenue Mr". " ".$_SESSION['nom_user']."</p> <a class='boxLogout' href='logout.php'>Se déconnecter</a>";
+echo "<p id='bonjour'>Bienvenue Mr". " ".$_SESSION['nom_user']."</p'> <a class='boxLogout' href='logout.php'>Se déconnecter</a>";
 }
 else{
     header('Location: ./login.php');     
@@ -72,7 +72,6 @@ if(isset($_POST['action'])){//POST n'est pas vide, on vérfie que les données s
         </div>
     </form>
     <a href="maintenance.php">Maintenance</a>
-    <a href="modify.php">Modifier</a>
     <a href="search.php">Chercher</a>
 </main>
 </body>

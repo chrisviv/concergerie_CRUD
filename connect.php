@@ -1,6 +1,4 @@
-<?php session_start();?>
-
-<?php
+<?php session_start();
 
 function connect(){
     try {
@@ -96,7 +94,7 @@ function recup(){
         $return = $str->fetchAll();
         for ($i=0; $i < count($return); $i++) {
             $index = strval($i);
-            echo '<tr><td>'.$return[$index]['date_intervention'].'</td><td>'.$return[$index]['Nom_taches'].'</td><td>'.$return[$index]['etage_intervention'].'</td><td><form action="modify.php" method="post"><input type="hidden" name="IDToSendForReplace" value="'.$return[$index]['ID_intervention'].'"><input type="submit" value="Modifier" id="bouton modif"></form></td><td><form action="" method="post"><input type="hidden" name="IDToSendForDelete" value="'.$return[$index]['ID_intervention'].'"><input type="submit" name="action" value="Supprimer" id="bouton sup"></form></td></tr>';
+            echo '<tr class="TtrCustumers"><td class="tdCustumers">'.$return[$index]['date_intervention'].'</td><td>'.$return[$index]['Nom_taches'].'</td><td>'.$return[$index]['etage_intervention'].'</td><td><form action="modify.php" method="post"><input type="hidden" name="IDToSendForReplace" value="'.$return[$index]['ID_intervention'].'"><input type="submit" value="Modifier" id="inModifMaintien"></form></td><td><form action="" method="post"><input type="hidden" name="IDToSendForDelete" value="'.$return[$index]['ID_intervention'].'"><input type="submit" name="action" value="Supprimer" id="inSupMaintien"></form></td></tr>';
         }
     } catch (PDOException $th) {
         echo $th;
@@ -134,8 +132,8 @@ function searchInt(){
         $return = $str->fetchAll();
         for ($i=0; $i < count($return); $i++) {
              $index = strval($i);
-            echo '<p> L\'intervention de '.$return[$index]['Nom_taches'].' a été réalisé le '.$return[$index]['date_intervention']." à l'étage ".$return[$index]['etage_intervention']." par Mr ".$return[$index]['name_user'].'</p>';
-            echo '<form action="search.php"><input type="hidden" name="IDToSendForSearch" value="'.$return[$index]['ID_intervention'].'"><input type="submit" value=" Chercher"></form>';
+            echo '<p class="searchInt"> L\'intervention de '.$return[$index]['Nom_taches'].' a été réalisé le '.$return[$index]['date_intervention']." à l'étage N° ".$return[$index]['etage_intervention']." par Mr ".$return[$index]['name_user'].'</p>';
+            echo '<form action="search.php"><input type="hidden" name="IDToSendForSearch" value="'.$return[$index]['ID_intervention'].'"><input type="submit" value=" Chercher" id=inSearchInt"></form>';
         }
     } catch (PDOException $th) {
         echo $th;
