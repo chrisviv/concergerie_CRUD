@@ -154,4 +154,11 @@ if(isset($_POST['action']) && $_POST['action']=="Supprimer"){
  if(isset($_POST['action']) && $_POST['action']=="Chercher" && (!empty($_POST['tacheToSearch'])||!empty($_POST['dateToSearch'])||!empty($_POST['floorToSearch']))){  
     searchInt();
 }
+if(isset($_POST['action']) && $_POST['action']=="Result" && (!empty($_POST['tacheToSearch'])||!empty($_POST['dateToSearch'])||!empty($_POST['floorToSearch']))){  
+    searchInt();
+ }else{
+        // echo 'pas de résultat';
+        // header('Location: ./result.php'); 
+}
+   
 ?>

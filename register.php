@@ -12,7 +12,6 @@
     <div id="containerReg">
         <form action="connect.php" method="post" class="form1">
            <!-- zone de connextion -->
-
             <h1 class="boxRegister">Register</h1>
             <div>
                 <label for="username">Nom:</label>

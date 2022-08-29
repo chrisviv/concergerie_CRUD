@@ -8,12 +8,14 @@ body{width: 100vw;min-height: 100vh;display: flex; flex-direction: column;justif
 #maintenance{background: #1982C4;}/* partie maintenance */
 #modifierInt{ background:#FF595E;}/* partie Modifier */
 #chercherInt{background: #FF924C;}/* partie Chercher */
+#resultInt{background:#52A675;}/*partie resultat*/  
 /* partie form login-register *//* bordered form */
 .form1{width: 100%;display: flex;justify-content: center;flex-direction: column;padding: 30px;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;}
 form{width: 100%;display: flex;justify-content: center;}/* from juste pour index */
-#bonjour{font-size: 2.5rem;text-align: center;font-weight: 300;color: white;}/* html BonjoUR Mr */
+#bonjour{font-size: 2.5rem;text-align: center;font-weight: 300;color: white;display: flex;flex-direction: column;align-items: center;}/* html BonjoUR Mr */
 /* partie déconnection *************************************************/
-.boxLogout{width: 100%;display: flex;justify-content: center;font-size: 1.1rem;text-decoration: none;}
+.boxLogout{width: 50%;display: flex;justify-content: center;font-size: 1rem;text-decoration: none;color:white;}
+.boxLogout:hover{background: white;color: #ffca3a; border-radius: 50px;}
 .boxIndexH1{width: 100%;font-size: 4rem;margin:120px 40px 0 0;color: white;font-weight: 200;}/* h1: Conciergerie */
 /* partie Index.php//form *********************************************/
 #boxIntervention, #boxTypeInt{width: 100%;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 30px;}
@@ -50,14 +52,14 @@ input[type=submit]:hover{background-color: white;color: #8ac926;border: 1px soli
 #boxContainer h1{width: 100%;font-size: 3rem;margin: 10px;padding: 5px;}
 .form2{width: 100%;display: flex;justify-content: center;flex-direction: column;padding: 30px;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;}
 #customers {border-collapse: collapse;width: 100%;border-width: 1px;border-color: black;border-style: solid;color: #000000;background: white;}
-td, th{border: 1px solid #ddd;padding: 15px;}
+td, th{border: 1px solid #ddd;padding: 5px;text-align: center;}
 #customers thead{background-color: #268EC7}
 tr:nth-child(even){background-color: #f2f2f2;}
 tr:hover {background-color: #ddd;}
-th{padding-top: 12px;padding-bottom: 12px;text-align: left;color: white;font-weight: 300; }
-#inModifMaintien[type=submit]{background-color:#1982C4;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
+th{padding-top: 12px;padding-bottom: 12px;text-align: center;color: white;font-weight: 300; }
+#inModifMaintien[type=submit]{background-color:#1982C4;color: white;padding: 5px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
 #inModifMaintien[type=submit]:hover{background-color: white; color: #1982C4;border: 1px solid #1982C4;border-radius: 50px;}
-#inSupMaintien[type=submit]{background-color:#1982C4;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
+#inSupMaintien[type=submit]{background-color:#1982C4;color: white;padding: 5px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
 #inSupMaintien[type=submit]:hover{background-color: white; color: #1982C4;border: 1px solid #1982C4;border-radius: 50px;}
 /* partie Modifier*********************************************/
 #boxModifyInt{width:100%;min-height: 50vh;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 30px;display: flex;flex-direction: column;justify-content: center;}
@@ -73,6 +75,12 @@ th{padding-top: 12px;padding-bottom: 12px;text-align: left;color: white;font-wei
 #dateToSearch, #floorToSearch{margin-bottom:  10px;width: 50%;}
 #inSearch[type=submit]{background-color:#FF924C;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
 #inSeach[type=submit]:hover{background-color: white; color: #FF924C;border: 1px solid #FF924C;border-radius: 50px;}
-.searchInt{color:black;font-size: 1.2rem;}
+.searchInt{color:white;font-size: 1rem;}
 #inSearchInt{background-color:#FF924C;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
 #inSearchInt:hover{background-color: white; color: #FF924C;border: 1px solid #FF924C;border-radius: 50px;}
+/* partie resultat */
+#inResult{background-color:#52A675;;color: white;padding: 14px 20px; margin: 20px 0;border: 1px solid white;cursor: pointer;width: 100%;}
+#inResult:hover{background-color: white; color: #52A675;;border: 1px solid #52A675;;border-radius: 50px;}
+#resultInt > main > h1 {
+    color: white;
+}

@@ -12,7 +12,7 @@
 </head>
 <body id="chercherInt">
     <main >
-        <form action="connect.php" method="POST">
+        <form action="result.php" method="POST">
             <div id="boxSearchInt">
                 <h1>Chercher une intervention</h1>
                 <select name="tacheToSearch" id="tacheToSearch" >
@@ -21,13 +21,12 @@
                 </select>
                 <input type="date" name="dateToSearch" id="dateToSearch" >
                 <input type="number" name="floorToSearch" id="floorToSearch" >
-           
+                
                 <input id="inSearch" type="submit" name="action" value="Chercher">
             </div>
         </form>
         <div class="linkInt">
             <a href="index.php">Accueil</a>
-            <a href="modify.php">Modifier</a>
         </div>
     </main>
 </body>
