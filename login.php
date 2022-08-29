@@ -22,7 +22,7 @@
                 <input type="password" name="password" id="password">
                    
                 <input type="submit" name="action" value="login" id="submit">
-                <a href="register.php">Register</a>
+                <a  class='loginReg' href="register.php">Register</a>
             </div>
         </form>
     </div>

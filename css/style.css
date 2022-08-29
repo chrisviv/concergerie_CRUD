@@ -37,9 +37,13 @@ a{font-size: 1rem;text-decoration: none;margin-top: 20px;margin-left: 20px;}
 /* full-with input//login*/
 input[type=text], input[type=password]{width:100%;padding: 12px 20px;margin: 20px 0;display: inline-block;border: 1px solid #ccc;}
 /* set a style for all bottons */
-input[type=submit]{background-color: #8ac926;color: white;padding: 5px 20px; margin: 10px 0;border: none;cursor: pointer;width: 100%;}
+input[type=submit]{background-color: #52A675;color: white;padding: 5px 20px; margin: 10px 0;border: none;cursor: pointer;}
 /* partie input Login */
-input[type=submit]:hover{background-color: white;color: #8ac926;border: 1px solid #8ac926;border-radius: 50px;}
+input[type=submit]:hover{background-color: white;color: #52A675;border: 1px solid #52A675;border-radius: 50px;}
+#submit,.loginReg{background-color: #8ac926;color: white;padding: 5px 20px; margin: 10px 0;border: none;cursor: pointer;font-size: 1rem;}
+#submit:hover,.loginReg:hover{background-color: white;color:#8ac926 ;padding: 5px 20px; margin: 10px 0;border: none;cursor: pointer;border: 1px solid #8ac926;border-radius: 50px;}
+.registerLog{background-color: #6a4c93;color: white;padding: 5px 20px; margin: 10px 0;border: none;cursor: pointer;font-size: 1rem;}
+.registerLog:hover{background-color: white;color:#6a4c93;padding: 5px 20px; margin: 10px 0;border: none;cursor: pointer;border: 1px solid #6a4c93;border-radius: 50px;}
 /*//////////////////////////// partie register.php //////////////////////////////*/
 #containerReg{width: 400px;margin: 0 auto;margin-top: 10%;}
 /* partie register*********************************************/
@@ -69,18 +73,20 @@ th{padding-top: 12px;padding-bottom: 12px;text-align: center;color: white;font-w
 #inModify[type=submit]{background-color:#FF595E;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
 #inModify[type=submit]:hover{background-color: white; color: #FF595E;border: 1px solid #FF595E;border-radius: 50px;}
 /* partie chercher ******************************************/
-#boxSearchInt{width: 100%;min-height: 50vh;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 30px;display: flex;flex-direction: column;justify-content: center;}
+#boxSearchInt{width: 100%;min-height: 50vh;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 30px;display: flex;flex-direction: column;justify-content: space-between;align-items: center;}
 #boxSearchInt > h1{font-size: 2rem; display: flex;justify-content: center;padding: 10px;}
-#dateToSearch{margin: 20px; width: 100%;}
-#dateToSearch, #floorToSearch{margin-bottom:  10px;width: 50%;}
+#dateToSearch{margin: 20px; width: 100%;text-align: center;margin-top: 0px;}
+#dateToSearch{margin-bottom: 10px;width: 50%;}
+#floorToSearch{margin-bottom: 10px;width: 50%;}
 #inSearch[type=submit]{background-color:#FF924C;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
 #inSeach[type=submit]:hover{background-color: white; color: #FF924C;border: 1px solid #FF924C;border-radius: 50px;}
 .searchInt{color:white;font-size: 1rem;}
+.tacheSearch{font-size: 1rem; font-weight: 400;}
+#tacheToSearch{margin-bottom: 20px;}
 #inSearchInt{background-color:#FF924C;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
 #inSearchInt:hover{background-color: white; color: #FF924C;border: 1px solid #FF924C;border-radius: 50px;}
 /* partie resultat */
-#inResult{background-color:#52A675;;color: white;padding: 14px 20px; margin: 20px 0;border: 1px solid white;cursor: pointer;width: 100%;}
-#inResult:hover{background-color: white; color: #52A675;;border: 1px solid #52A675;;border-radius: 50px;}
-#resultInt > main > h1 {
-    color: white;
-}
+#inResult[type=submit]{background-color:#52A675;;color: white;padding: 14px 20px; margin: 20px 0;border: 1px solid white;cursor: pointer;width: 100%;}
+#inResult[type=submit]:hover{background-color: white; color: #52A675;;border: 1px solid #52A675;;border-radius: 50px;}
+#resultInt > main > h1 {color: white;}
+

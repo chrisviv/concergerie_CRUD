@@ -26,7 +26,7 @@
                     <?php recup(); ?>
             </table>
             <div class="linkInt">
-                    <a href="index.php">Accueil</a>
+                    <a href="index.php">Ajouter</a>
                     <a href="search.php">Chercher</a>
             </div>
         </div>

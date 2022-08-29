@@ -18,7 +18,7 @@
             <!-- <?php    ?> -->
         </div>
         <div class="linkInt">
-            <a href="index.php">Accueil</a>
+            <a href="index.php">Ajouter</a>
         </div>
     </main>
 </body>

@@ -24,7 +24,7 @@
                 <input type="password" name="password" id="password">
                            
                 <input id="inRegister" type="submit" name="action" value="register"></input>
-                <a href="index.php">Login</a>
+                <a class='registerLog' href="index.php">Login</a>
             </div>
         </form>
     </div>
