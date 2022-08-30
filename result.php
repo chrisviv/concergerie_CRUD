@@ -13,12 +13,14 @@
 <body id="resultInt">
     <main>    
         <h1>Résultat d'une recherche d'intervention</h1>  
-        <input id="inResult" type="submit" name="action" value="Result">  
-        <div>
-            <!-- <?php    ?> -->
-        </div>
-        <div class="linkInt">
-            <a href="index.php">Ajouter</a>
+        <div id="inResult">
+            <div class="linkInt">
+                <?php  if(isset($_POST['action']) && $_POST['action']=="Chercher" && (!empty($_POST['tacheToSearch'])||!empty($_POST['dateToSearch'])||!empty($_POST['floorToSearch']))){  
+                        searchInt();
+}       
+?>
+                <a class="buttonSub color" href="index.php">Ajouter</a>
+            </div>
         </div>
     </main>
 </body>

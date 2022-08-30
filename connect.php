@@ -86,10 +86,11 @@ function deleteMaintien(){
     $query->bindParam(':idToDelete', $_POST['IDToSendForDelete']);
     $query->execute();
     header('Location: maintenance.php');
+    // echo 'Données supprimées';
 }
 function recup(){
     try {
-        $str = connect()->prepare("SELECT concierge.ID_intervention,concierge.date_intervention,taches.Nom_taches,concierge.etage_intervention FROM concierge INNER JOIN taches ON concierge.ID_taches = taches.ID_taches ;");
+        $str = connect()->prepare("SELECT concierge.ID_intervention, concierge.date_intervention,taches.Nom_taches,concierge.etage_intervention FROM concierge INNER JOIN taches ON concierge.ID_taches = taches.ID_taches ORDER BY date_intervention DESC ;");
         $str->execute();
         $return = $str->fetchAll();
         for ($i=0; $i < count($return); $i++) {
@@ -115,7 +116,7 @@ function searchInt(){
             if ($_SESSION['controleMulti'] = 1 && $_POST['tacheToSearch'] !="") {
                 $query .= " AND ";
             }
-            $query .= "concierge.date_intervention = $retourForPrep";
+            $query .= "concierge.date_intervention = :test";
         }
         if ($_POST['floorToSearch']!="") {
             $retourForPrep = $_POST['floorToSearch'];
@@ -151,14 +152,4 @@ if(isset($_POST['action']) && $_POST['action']=="Modifier"){
 if(isset($_POST['action']) && $_POST['action']=="Supprimer"){
     deleteMaintien();
 }
- if(isset($_POST['action']) && $_POST['action']=="Chercher" && (!empty($_POST['tacheToSearch'])||!empty($_POST['dateToSearch'])||!empty($_POST['floorToSearch']))){  
-    searchInt();
-}
-if(isset($_POST['action']) && $_POST['action']=="Result" && (!empty($_POST['tacheToSearch'])||!empty($_POST['dateToSearch'])||!empty($_POST['floorToSearch']))){  
-    searchInt();
- }else{
-        // echo 'pas de résultat';
-        // header('Location: ./result.php'); 
-}
-   
 ?>

@@ -27,11 +27,13 @@
                 <input type="number" name="floorToSearch" id="floorToSearch" >
 
                 <input id="inSearch" type="submit" name="action" value="Chercher">
+                <div class="linkInt">
+                    <a id="buttonSub" href="index.php">Ajouter</a>
+                </div>
             </div>
-        </form>
-        <div class="linkInt">
-            <a href="index.php">Ajouter</a>
+            
         </div>
+        </form>
     </main>
 </body>
 </html>

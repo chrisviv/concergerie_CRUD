@@ -34,6 +34,8 @@ if(isset($_POST['action'])){//POST n'est pas vide, on vérfie que les données s
         }
     elseif($_POST['action']=='addTypeInter'&& isset($_POST['type_intervention'])&& !empty($_POST['type_intervention'])){
         addingType();
+        
+
     }
     else{
         die('ajout des interventions complet');
