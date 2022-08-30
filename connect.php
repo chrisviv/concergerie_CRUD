@@ -134,7 +134,7 @@ function searchInt(){
         for ($i=0; $i < count($return); $i++) {
              $index = strval($i);
             echo '<p class="searchInt"> L\'intervention de '.$return[$index]['Nom_taches'].' a été réalisé le '.$return[$index]['date_intervention']." à l'étage N° ".$return[$index]['etage_intervention']." par Mr ".$return[$index]['name_user'].'</p>';
-            echo '<form action="search.php"><input type="hidden" name="IDToSendForSearch" value="'.$return[$index]['ID_intervention'].'"><input type="submit" value=" Chercher" class="inSearchInt inResultInt"></form>';
+            echo '<form action="search.php"><input type="hidden" name="IDToSendForSearch" value="'.$return[$index]['ID_intervention'].'">';
         }
     } catch (PDOException $th) {
         echo $th;

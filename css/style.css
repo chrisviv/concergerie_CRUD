@@ -80,7 +80,7 @@ th{padding-top: 12px;padding-bottom: 12px;text-align: center;color: white;font-w
 #floorToSearch{margin-bottom: 10px;width: 50%;}
 #inSearch[type=submit]{background-color:#FF924C;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
 #inSeach[type=submit]:hover{background-color: white; color: #FF924C;border: 1px solid #FF924C;border-radius: 50px;}
-.searchInt{color:white;font-size: 1rem;}
+.searchInt{color:black;font-size: 1rem;}
 .tacheSearch{font-size: 1rem; font-weight: 400;}
 #tacheToSearch{margin-bottom: 20px;}
 #inSearchInt{background-color:#FF924C;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
@@ -91,6 +91,3 @@ th{padding-top: 12px;padding-bottom: 12px;text-align: center;color: white;font-w
 #resultInt > main > h1 {color: white;}
 .buttonSub{background-color:#52A675;;color: white;padding: 5px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
 .buttonSub:hover{background-color:#52A675; color: white;border: 1px solid #52A675;border-radius: 50px;} 
-
-
-
