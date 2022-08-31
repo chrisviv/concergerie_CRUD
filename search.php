@@ -11,7 +11,7 @@
     <title>Chercher une intervention</title>
 </head>
 <body id="chercherInt">
-    <main >
+    <main id="mainSearch" >
         <section id="boxSearchConcierge">
             <form action="search.php" method="POST">
                 <div id="boxSearchInt">
@@ -28,11 +28,10 @@
                     <input type="number" name="floorToSearch" id="floorToSearch" >
 
                     <input id="inSearch" type="submit" name="action" value="Chercher">
-                    <div class="linkInt">
-                        <a id="buttonSub" href="index.php">Ajouter</a>
-                    </div>
                 </div>
             </form>
+        </section>
+        <section id="boxResultConcierge">
             <div id="inResult">
                 <h1>Résultat d'une recherche d'intervention</h1>  
                     <div class="linkInt">

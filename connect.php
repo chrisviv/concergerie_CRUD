@@ -85,7 +85,7 @@ function deleteMaintien(){
     $query= connect()->prepare("DELETE FROM concierge WHERE id_intervention=:idToDelete;");
     $query->bindParam(':idToDelete', $_POST['IDToSendForDelete']);
     $query->execute();
-    header('Location: maintenance.php');
+    header('Location: index.php');
 }
 function recup(){
     try {
