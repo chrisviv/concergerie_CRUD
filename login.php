@@ -10,7 +10,6 @@
 <main>
     <div id="container">
         <!-- zone de connextion -->
-
         <form action="connect.php" method="post" class="form1">
             <h1>Login</h1>
 

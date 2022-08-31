@@ -13,6 +13,7 @@ else{
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Application pour le service de conciergerie">
     <link rel="stylesheet" href="./css/style.css">
     <title>Conciergerie d'un immeuble</title>
 </head>
@@ -21,7 +22,7 @@ else{
 //on traite l'ajout des interventions
 if(isset($_POST['action'])){//POST n'est pas vide, on vérfie que les données sont présentes
     if($_POST['action']=='addInter'&&isset($_POST['etage_intervention'], $_POST['date_intervention'], $_POST['addTache'])&& !empty($_POST['etage_intervention']) && !empty($_POST['date_intervention'])&& !empty( $_POST['addTache'])){
-        //La saisie des interventions est complet // On récupére les données en les protégeant (failles XSS)//On peut les enregister //on se connecte à la base  //require_once "../../incluses/connect.php"; //on écrit la requête 
+        //La saisie des interventions est complet /On peut les enregister //on se connecte à la base //on écrit la requête 
         $sql = "INSERT INTO `concierge`(`etage_intervention`, `date_intervention`,`id_user`,`ID_taches`) VALUES (:etage_intervention, :date_intervention, :id_user, :id_taches)";
         $query = connect()->prepare($sql); //on prépare la requête
         $query->bindParam(":etage_intervention", $_POST['etage_intervention']);//on injecte les valeurs
@@ -29,13 +30,11 @@ if(isset($_POST['action'])){//POST n'est pas vide, on vérfie que les données s
         $query->bindParam(":id_user", $_SESSION['id_user']);
         $query->bindParam(":id_taches", $_POST['addTache']);
         if(!$query->execute()){//on exécute la requete
-            die("Une erreur est survenue");//on récupére l'id // $id = $db->lastInsertId(); // die("Ajout de l'intervention effectuée sous le numero $id");
+            die("Une erreur est survenue");
             }
         }
     elseif($_POST['action']=='addTypeInter'&& isset($_POST['type_intervention'])&& !empty($_POST['type_intervention'])){
         addingType();
-        
-
     }
     else{
         die('ajout des interventions complet');
@@ -43,38 +42,57 @@ if(isset($_POST['action'])){//POST n'est pas vide, on vérfie que les données s
 }
 ?>
 <main>
-    <form action="index.php" method="post" >
-        <!-- zone de connextion -->
-        <h1 class="boxIndexH1">Conciergerie</h1>
-        <div id=boxIntervention>
-            <div class="boxEtage">
-                <p class="ajoutInt">Ajouter les interventions </p>
-                <label for="etage_intervention">Etage</label>
-                <input type="number" name="etage_intervention" id="etage_intervention">
+    <section id="boxIndexConcierge">
+        <form action="index.php" method="post" >
+            <!-- zone de connextion -->
+            <h1 class="boxIndexH1">Conciergerie</h1>
+            <div id=boxIntervention>
+                <div class="boxEtage">
+                    <p class="ajoutInt">Ajouter les interventions </p>
+                    <label for="etage_intervention">Etage</label>
+                    <input type="number" name="etage_intervention" id="etage_intervention">
+                </div>
+                <select name="addTache" id="addTache">
+                <option value=""></option>
+                <?php recupTache();?>
+                </select>
+                <div class="dateInt">
+                    <label for="date_intervention">Date d'intervention</label>
+                    <input type="date" name="date_intervention" id="date_intervention">
+                </div>
+                <button class="etage" type="submit" name="action" value="addInter">Ajouter ici</button>
+                <a href="search.php">Chercher</a>
             </div>
-            <select name="addTache" id="addTache">
-            <option value=""></option>
-               <?php recupTache();?>
-            </select>
-            <div class="dateInt">
-                <label for="date_intervention">Date d'intervention</label>
-                <input type="date" name="date_intervention" id="date_intervention">
+        </form>
+        <form action="index.php" method="post">
+            <!-- zone de connextion -->
+            <div id="boxTypeInt">
+                <div>
+                    <label for="type_intervention">Type d'intervention</label>
+                    <input type="text" name="type_intervention" id="type_intervention">
+                    <button class="type" type="submit" name="action" value="addTypeInter">Ajouter le type d'intervention</button>
+                </div>
             </div>
-             <button class="etage" type="submit" name="action" value="addInter">Ajouter ici</button>
+        </form>
+    </section>
+    <section id="boxMaintenanceConcierge">
+        <div id="boxContainer">
+            <!-- zone de connextion -->
+                <h1>Liste des Interventions</h1>
+                <table id="customers">
+                    <thead>
+                        <tr>
+                            <th>Date d'intervention</th>
+                            <th>Type d'interventon</th>
+                            <th>Etage</th>
+                            <th>Modification</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <?php recup(); ?>
+                </table>
         </div>
-    </form>
-    <form action="index.php" method="post">
-        <!-- zone de connextion -->
-        <div id="boxTypeInt">
-            <div>
-                <label for="type_intervention">Type d'intervention</label>
-                <input type="text" name="type_intervention" id="type_intervention">
-                <button class="type" type="submit" name="action" value="addTypeInter">Ajouter le type d'intervention</button>
-            </div>
-        </div>
-    </form>
-    <a href="maintenance.php">Liste Maintenance</a>
-    <a href="search.php">Chercher</a>
+    </section>
 </main>
 </body>
 </html>

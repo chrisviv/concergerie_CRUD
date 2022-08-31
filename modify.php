@@ -14,7 +14,7 @@
     <main>
         <form action="connect.php" method="POST">
             <div id="boxModifyInt">
-                <h1>Modifier une internvation</h1>
+                <h1>Modifier une intervention</h1>
                 <select name="tacheToReplace" id="tacheToReplace" required>
                     <option value=""></option>
                     <?php recupTache();?>

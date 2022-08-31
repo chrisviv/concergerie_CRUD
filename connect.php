@@ -76,7 +76,7 @@ function modifyMaintien(){
         $str->bindParam(':idTache', $_POST['tacheToReplace']);
         $str->bindParam('idInter',$_POST['idHiddenToReplace'] );
         $str->execute();
-        header('Location: maintenance.php');
+        header('Location: index.php');
     } catch (PDOException $th) {
         echo $th;
     }
@@ -86,7 +86,6 @@ function deleteMaintien(){
     $query->bindParam(':idToDelete', $_POST['IDToSendForDelete']);
     $query->execute();
     header('Location: maintenance.php');
-    // echo 'Données supprimées';
 }
 function recup(){
     try {
@@ -95,7 +94,7 @@ function recup(){
         $return = $str->fetchAll();
         for ($i=0; $i < count($return); $i++) {
             $index = strval($i);
-            echo '<tr class="TtrCustumers"><td class="tdCustumers">'.$return[$index]['date_intervention'].'</td><td>'.$return[$index]['Nom_taches'].'</td><td>'.$return[$index]['etage_intervention'].'</td><td><form action="modify.php" method="post"><input type="hidden" name="IDToSendForReplace" value="'.$return[$index]['ID_intervention'].'"><input type="submit" value="Modifier" id="inModifMaintien"></form></td><td><form action="" method="post"><input type="hidden" name="IDToSendForDelete" value="'.$return[$index]['ID_intervention'].'"><input type="submit" name="action" value="Supprimer" id="inSupMaintien"></form></td></tr>';
+            echo '<tr class="tr"><td class="td">'.$return[$index]['date_intervention'].'</td><td>'.$return[$index]['Nom_taches'].'</td><td>'.$return[$index]['etage_intervention'].'</td><td><form action="modify.php" method="post"><input type="hidden" name="IDToSendForReplace" value="'.$return[$index]['ID_intervention'].'"><input type="image" value="Modifier" id="inModifMaintien"  src="./img/modifier.png"></form></td><td><form action="" method="post"><input type="hidden" name="IDToSendForDelete" value="'.$return[$index]['ID_intervention'].'"><input type="submit" name="action" value="Supprimer" id="inSupMaintien"></form></td></tr>';
         }
     } catch (PDOException $th) {
         echo $th;
