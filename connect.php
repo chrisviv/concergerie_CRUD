@@ -2,7 +2,7 @@
 
 function connect(){
     try {
-        $db = new PDO('mysql:host=localhost;port=3307;dbname=conciergerie', 'root', '');
+        $db = new PDO('mysql:host=localhost;;dbname=chrisv1521_Conciergerie ', 'chrisv1521', '4mPU/+tE2jLomw==');
         // echo 'ok';
         return $db;
         }
