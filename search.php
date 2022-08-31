@@ -25,7 +25,7 @@
                     <input type="date" name="dateToSearch" id="dateToSearch" >
 
                     <label for="etage_intervention">Etage d'intervention</label>
-                    <input type="number" name="floorToSearch" id="floorToSearch" >
+                    <input type="number" min='1' max='10' name="floorToSearch" id="floorToSearch" >
 
                     <input id="inSearch" type="submit" name="action" value="Chercher">
                 </div>
@@ -33,14 +33,16 @@
         </section>
         <section id="boxResultConcierge">
             <div id="inResult">
-                <h1>Résultat d'une recherche d'intervention</h1>  
-                    <div class="linkInt">
-                        <?php  if(isset($_POST['action']) && $_POST['action']=="Chercher" && (!empty($_POST['tacheToSearch'])||!empty($_POST['dateToSearch'])||!empty($_POST['floorToSearch']))){  
-                                searchInt();
-                                }       
-                        ?>
-                        <a class="buttonSub" href="index.php">Ajouter</a>
-                    </div>
+                <h1>
+                    Résultat d'une recherche d'intervention
+                </h1>  
+                <div class="linkIntSearch">
+                    <?php  if(isset($_POST['action']) && $_POST['action']=="Chercher" && (!empty($_POST['tacheToSearch'])||!empty($_POST['dateToSearch'])||!empty($_POST['floorToSearch']))){  
+                            searchInt();
+                            }       
+                    ?>
+                    <a class="buttonSub" href="index.php">Ajouter</a>
+                </div>
             </div>
         </section>
     </main>

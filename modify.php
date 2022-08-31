@@ -11,7 +11,7 @@
     <title>Modifier une intervention</title>
 </head>
 <body id="modifierInt">
-    <main>
+    <main class="boxMainModif">
         <form action="connect.php" method="POST">
             <div id="boxModifyInt">
                 <h1>Modifier une intervention</h1>
@@ -25,9 +25,9 @@
                 <input id="inModify" type="submit" name="action" value="Modifier">
             </div>
         </form>
-        <div class="linkInt">
-            <a href="index.php">Accueil</a>
-            <a href="search.php">Chercher</a>
+        <div class="linkIntModif">
+            <a class='buttonYellow' href="index.php">Ajouter</a>
+            <a class='buttonModif'href="search.php">Chercher</a>
         </div>
     </main>
 </body>

@@ -15,7 +15,8 @@ display: flex;align-items: center;}/* h1: Conciergerie */
 .dashBord{font-size: 1.5rem;color: white;width: 100%;height: 50px;font-weight: 100;}
 /*///partie Index.php//form///*/
 main{width: 100%;display: flex;justify-content: center;}
-.linkInt > label{margin-bottom: -25px; margin-left: -30px;}
+.linkInt{width: 100%;display:flex;justify-content: center;}
+.linkInt > label{margin-top:25px; margin-left: -30px;}
 #boxIndexConcierge{width: 50%;display: flex;justify-content: center;}
 #boxMaintenanceConcierge{width: 50%;display: flex;justify-content: center;}
 #index{background:#ffca3a;width: 100%; min-height: 100%;display: flex; flex-direction: column;justify-content: start;align-items: center;}/* parite body def color */
@@ -33,7 +34,7 @@ input[type=text]{width:100%;padding: 12px 20px;margin: 10px 0;display: inline-bl
 .aIndexConcierge{background-color:  #FF924C;;color: white;padding: 5px 20px;cursor: pointer;display: flex;justify-content: center;width: 35%;border: 1px solid transparent;}
 .aIndexConcierge:hover{background-color: white; color: #FF924C;border-radius: 50px;border: 1px solid  #FF924C;}
 /*///partie HTML:a///*/
-a{font-size: 1rem;text-decoration: none;margin-top: 20px;margin-left: 20px;}
+a{text-decoration: none;margin-top: 20px;margin-left: 20px;}
 /* partir maintenace tableau */
 #boxContainer{width: 100%;display: flex;flex-direction: column;margin-right: 20px;}
 #boxContainer h1{width: 100%;font-size: 2.2rem;margin: 100px 0 15px 0;color: white;font-weight: 200;text-align: center;}
@@ -60,7 +61,7 @@ th{text-align: center;color: white;font-weight: 300; }
 .loginReg:hover{background-color: white;color:#8ac926 ;padding: 5px 20px; border: none;cursor: pointer;border: 1px solid #8ac926;border-radius: 50px;}
 #submit{background-color: #8ac926;color: white;padding: 5px 20px; margin: 10px 0;border: none;cursor: pointer;font-size: 1rem;}
 #submit:hover{background-color: white;color:#8ac926 ;padding: 5px 20px; margin: 10px 0;border: none;cursor: pointer;border: 1px solid #8ac926;border-radius: 50px;}
-.linkInt{width: 100%;display: flex;justify-content: space-around;align-items: center;}
+.linkIntSearch {width: 100%; display: flex;flex-direction: column;}
 /*///partie register.php///*/
 #register{background: #6a4c93;display: flex;align-items: center;height: 100vh;}/* partie register */
 #containerReg{width: 400px;margin: 0 auto;}
@@ -70,21 +71,29 @@ th{text-align: center;color: white;font-weight: 300; }
 .registerLog{background-color: #6a4c93;color: white;padding: 5px 20px; margin: 10px 0;border: none;cursor: pointer;font-size: 1rem;}
 .registerLog:hover{background-color: white;color:#6a4c93;padding: 5px 20px; margin: 10px 0;border: none;cursor: pointer;border: 1px solid #6a4c93;border-radius: 50px;}
 /*///partie Modifier///*/
-#modifierInt{ background:#FF595E;}/* partie Modifier */
+#modifierInt{ background:#FF595E;width: 100%; height: 100vh;display: flex;justify-content: center;align-items: center;}/* partie Modifier */
+.boxMainModif{width: 450px;display: flex;justify-content: center;flex-direction: column;}
+.linkIntModif{width: 100%;display: flex;justify-content: space-around;}
+.buttonModif{background-color:  #FF924C;color: white;padding: 5px 20px;cursor: pointer;display: flex;justify-content: center;width: 35%;border: 1px solid transparent;}
+.buttonModif:hover{background-color: white; color: #FF924C;border-radius: 50px;border: 1px solid  #FF924C;}
+.buttonYellow{background-color:   #ffca3a;color: white;padding: 5px 20px;cursor: pointer;display: flex;justify-content: center;width: 35%;border: 1px solid transparent;}
+.buttonYellow:hover{background-color: white; color: #ffca3a;border-radius: 50px;border: 1px solid  #ffca3a;}
+
 #boxModifyInt{min-height: 35vh;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;display: flex;flex-direction: column;justify-content: center;align-items: center;}
-#boxModifyInt > h1{font-size: 2rem; display: flex;justify-content: center;padding: 10px;}
+#boxModifyInt > h1{font-size: 1.8rem; display: flex;justify-content: center;padding: 10px;}
 #tacheToReplace{margin: 20px; width: 100%;background: #FF595E;border: none;height: 35px;color: white;}
 #dateToReplace, #floorToReplace{margin-bottom:  10px;width: 50%;font-size: 1.1rem;text-align: center;height: 35px;}
-#inModify[type=submit]{background-color:#FF595E;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
+#inModify[type=submit]{background-color:#FF595E;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;border: 1px solid transparent;}
 #inModify[type=submit]:hover{background-color: white; color: #FF595E;border: 1px solid #FF595E;border-radius: 50px;}
 /*///partie chercher et patie resultat ///*/
 #chercherInt{background: #FF924C;}/* body Chercher et partir resultat*/
-#mainSearch{width: 100%; min-height: 100%;display: flex;}
+#mainSearch{width: 100%;display: flex;height: 100vh;align-items: center;}
 /* #resultInt{background:#52A675;}/*partie resultat*/ 
-#boxSearchConcierge{min-width: 50%;min-height: 50vh;display: flex;Justify-content:space-around;}
-#boxSearchInt{padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;display: flex;flex-direction: column;align-items: center;}
+#boxSearchConcierge{width: 50%;height: 50vh;display: flex;Justify-content:space-around;}
+#boxResultConcierge{width: 50%;height: 50vh;display: flex;Justify-content:space-around;}
+#boxSearchInt{width:500px;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;display: flex;flex-direction: column;align-items: center;}
 #boxSearchInt > h1{font-size: 2rem; display: flex;justify-content: center;padding: 10px;}
-#dateToSearch{margin: 20px; width: 50%;text-align: center}
+#dateToSearch{margin: 20px; width: 50%;text-align: center; font-size: 1.1rem;}
 #floorToSearch{margin-bottom: 10px;width: 50%;}
 #inSearch[type=submit]{background-color:#FF924C;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
 #inSeach[type=submit]:hover{background-color: white; color: #FF924C;border: 1px solid #FF924C;border-radius: 50px;}
@@ -94,10 +103,9 @@ th{text-align: center;color: white;font-weight: 300; }
 #inSearchInt{background-color:#FF924C;color: white;padding: 14px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
 #inSearchInt:hover{background-color: white; color: #FF924C;border: 1px solid #FF924C;border-radius: 50px;}
 /* partie resultat */
-#inResult{width: 100%;maxi-height: 50vh;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+#inResult{width: 530px;height: 50vh;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 10px;display: flex;flex-direction: column;justify-content: space-around;}
 #resultInt > main > h1 {color: white;}
-.buttonSub{background-color:#ffca3a;color: white;padding: 5px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
+.buttonSub{background-color:#ffca3a;color: white;padding: 5px 20px; margin: 20px 0;border: none;cursor: pointer;width: 30%;display: flex;justify-content: center;}
 .buttonSub:hover{background-color:#ffca3a; color: white;border: 1px solid #ffca3a;border-radius: 50px;} 
 
-input[type=submit]:hover{background-color: white;color: #52A675;border: 1px solid #52A675;border-radius: 50px;}
