@@ -51,7 +51,9 @@ if(isset($_POST['action'])){//POST n'est pas vide, on vérfie que les données s
                     <p class="ajoutInt">Ajouter les interventions </p>
                     <label for="etage_intervention">Etage</label>
                     <input type="number" name="etage_intervention" id="etage_intervention">
+                    <a class='aIndexConcierge'href="search.php">Chercher</a>
                 </div>
+                <label for="date_intervention">Type d'intervention</label>
                 <select name="addTache" id="addTache">
                 <option value=""></option>
                 <?php recupTache();?>
@@ -61,18 +63,15 @@ if(isset($_POST['action'])){//POST n'est pas vide, on vérfie que les données s
                     <input type="date" name="date_intervention" id="date_intervention">
                 </div>
                 <button class="etage" type="submit" name="action" value="addInter">Ajouter ici</button>
-                <a href="search.php">Chercher</a>
             </div>
         </form>
         <form action="index.php" method="post">
             <!-- zone de connextion -->
             <div id="boxTypeInt">
-                <div>
-                    <label for="type_intervention">Type d'intervention</label>
-                    <input type="text" name="type_intervention" id="type_intervention">
-                    <button class="type" type="submit" name="action" value="addTypeInter">Ajouter le type d'intervention</button>
-                </div>
-            </div>
+                <label for="type_intervention">Type d'intervention</label>
+                <input type="text" name="type_intervention" id="type_intervention">
+                <button class="type" type="submit" name="action" value="addTypeInter">Ajouter le type d'intervention</button>
+           </div>
         </form>
     </section>
     <section id="boxMaintenanceConcierge">

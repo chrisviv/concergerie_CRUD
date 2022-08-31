@@ -15,15 +15,17 @@ form{width: 100%;display: flex;justify-content: center;}/* from juste pour index
 main{width: 100%; min-height: 100%;display: flex;justify-content: center;}
 #boxIndexConcierge, #boxMaintenanceConcierge{width: 50%;margin-right: 50px;margin-left: 20px;}
 #index{background:#ffca3a;width: 100%; min-height: 100%;display: flex; flex-direction: column;justify-content: start;align-items: center;}/* parite body def color */
-#boxIntervention, #boxTypeInt{width: 100%;padding: 30px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 20px;}
+#boxIntervention, #boxTypeInt{width: 100%;padding: 20px;border: 1px solid #f1f1f1;background: #fff;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);border-radius: 10px;margin-top: 20px;}
 .boxEtage{margin: 10px;padding: 5px;}/* partie index enregistrement etage */
 .ajoutInt{font-size: 1.5rem;text-align: center;font-weight: 500; color:black;margin: -30px 0 25px 0;}/* partie index ajout intervention*/
 #etage_intervention{width: 50%;font-size: 1.1rem;text-align: center;}
 .etage, .type{width: 100%;background-color: #ffca3a; border: none;color: white;margin-top: 20px;height: 35px;}
 .etage:hover, .type:hover{background-color: white;color: #ffca3a;border: 1px solid #ffca3a;border-radius: 50px;}
-#addTache{margin: 20px 0px;background: #ffca3a; border: none;height: 30px;color: white;}/* partie select ajout tache: Index*/
+#addTache{margin: 5px 0px;background: #ffca3a; border: none;height: 30px;color: white;}/* partie select ajout tache: Index*/
 #date_intervention{width: 53%;margin-top: 10px; height: 35px;text-align: center;font-size: 1.1rem;}/* date intervention index */
 input[type=text]{width:100%;padding: 12px 20px;margin: 20px 0;display: inline-block;border: 1px solid #ccc;font-size: 1.1rem;}
+.aIndexConcierge{background-color: #1982C4;color: white;padding: 5px 20px;cursor: pointer;display: flex;justify-content: center;width: 35%;border: 1px solid transparent;margin-left: 90px;}
+.aIndexConcierge:hover{background-color: white; color: #1982C4;border-radius: 50px;border: 1px solid #1982C4 ;}
 /*///partie HTML:a///*/
 a{font-size: 1rem;text-decoration: none;margin-top: 20px;margin-left: 20px;}
 /* partir maintenace tableau */
@@ -43,7 +45,7 @@ tr:hover {background-color: #ddd;}
 th{padding-top: 12px;padding-bottom: 12px;text-align: center;color: white;font-weight: 300; } 
 #inModifMaintien{padding: 5px 20px;border: none;cursor: pointer;width: 80px;}
 #inSupMaintien{color: white;background: #1982C4;padding: 5px 20px; margin: 20px 0;border: none;cursor: pointer;width: 100%;}
-#inSupMaintien:hover{background-color: white; color: #1982C4;border: 1px solid transparent;border-radius: 50px;}
+#inSupMaintien:hover{background-color: white; color: #1982C4;border: solid 1pxtransparent;border-radius: 50px;}
 /*///partie login.php/full-with /login/register//*/
 #login{background: #8ac926;}/* partie login*/
 #container{width: 400px;margin: 0 auto;}

@@ -13,7 +13,7 @@
 <body id="chercherInt">
     <main >
         <section id="boxSearchConcierge">
-            <form action="result.php" method="POST">
+            <form action="search.php" method="POST">
                 <div id="boxSearchInt">
                     <h1>Chercher une intervention</h1>
                     <h2 class="tacheSearch">Type d'intervention</h2>
